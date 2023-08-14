@@ -1,0 +1,23 @@
+{% extends 'index.html' %}
+
+{% if user.username %}
+    {% block body %} 
+        <div class="page-wrapper" Style="padding-top: 138px;padding-left: 50px;">
+                    <p class="text-success">Success: You are now logged in!</p>
+                    <h1>Hello {{user.username}}!</h1>
+                    <p class="text-muted">One can log in and report an incident and view saved incidents.<br>
+                        Admin can view the forms.</p>
+                </div>
+    {% endblock body %}
+
+{% else %}
+
+    {% block loginbody %}
+            <div class="page-wrapper" Style="padding-top: 138px;padding-left: 50px;">
+            
+                <p class="text-muted">One can log in and report an incident and view saved incidents.<br>
+                    Admin can view the forms.</p>
+            </div>
+    {% endblock loginbody %}
+
+{% endif %}
